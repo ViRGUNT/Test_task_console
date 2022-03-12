@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NewsReader.Models;
 
 namespace NewsReader
 {
@@ -10,6 +11,7 @@ namespace NewsReader
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
