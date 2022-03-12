@@ -1,0 +1,14 @@
+F:\Git\Console\NewsReader\NewsReader\bin\Release\NewsReader.exe.config
+F:\Git\Console\NewsReader\NewsReader\bin\Release\NewsReader.exe
+F:\Git\Console\NewsReader\NewsReader\bin\Release\NewsReader.pdb
+F:\Git\Console\NewsReader\NewsReader\bin\Release\EntityFramework.dll
+F:\Git\Console\NewsReader\NewsReader\bin\Release\EntityFramework.SqlServer.dll
+F:\Git\Console\NewsReader\NewsReader\bin\Release\System.ServiceModel.Primitives.dll
+F:\Git\Console\NewsReader\NewsReader\bin\Release\EntityFramework.xml
+F:\Git\Console\NewsReader\NewsReader\bin\Release\EntityFramework.SqlServer.xml
+F:\Git\Console\NewsReader\NewsReader\bin\Release\System.ServiceModel.Primitives.pdb
+F:\Git\Console\NewsReader\NewsReader\obj\Release\NewsReader.csproj.AssemblyReference.cache
+F:\Git\Console\NewsReader\NewsReader\obj\Release\NewsReader.csproj.CoreCompileInputs.cache
+F:\Git\Console\NewsReader\NewsReader\obj\Release\NewsReader.csproj.CopyComplete
+F:\Git\Console\NewsReader\NewsReader\obj\Release\NewsReader.exe
+F:\Git\Console\NewsReader\NewsReader\obj\Release\NewsReader.pdb

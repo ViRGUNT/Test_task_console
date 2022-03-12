@@ -1,4 +1,3 @@
-F:\Git\Console\NewsReader\NewsReader\obj\Debug\NewsReader.csproj.AssemblyReference.cache
 F:\Git\Console\NewsReader\NewsReader\obj\Debug\NewsReader.csproj.CoreCompileInputs.cache
 F:\Git\Console\NewsReader\NewsReader\bin\Debug\NewsReader.exe.config
 F:\Git\Console\NewsReader\NewsReader\bin\Debug\NewsReader.exe
