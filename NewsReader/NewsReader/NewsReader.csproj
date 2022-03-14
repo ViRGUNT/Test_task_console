@@ -67,5 +67,9 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="SLQ_Scripts\SQLQuery_CreateDB.sql" />
+    <Content Include="SLQ_Scripts\SQLQuery_CreateTableNews.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
