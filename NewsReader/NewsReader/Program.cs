@@ -8,7 +8,7 @@ using NewsReader.Models;
 using System.Data.Linq;
 using System.Xml;
 using System.ServiceModel.Syndication;
-
+using System.Text.RegularExpressions;
 
 namespace NewsReader
 {
@@ -113,8 +113,9 @@ namespace NewsReader
 
                     // специальные параметры: игрорирование неважных пробелов, комментариев, ограничение в количество символов в документе - 0 (не ограничено)
                     XmlReaderSettings settings = new XmlReaderSettings();
-                    settings.IgnoreWhitespace = true;
                     settings.IgnoreComments = true;
+                    settings.IgnoreProcessingInstructions = true;
+                    settings.IgnoreWhitespace = true;
                     settings.MaxCharactersInDocument = 0;
 
                     // создам экзепляр для XmlReader чтения  данных                   
@@ -135,6 +136,7 @@ namespace NewsReader
 
                             // проверяем нет ли в БД новости с таким же GUID
                             var newsFromDB = news.Where(w => w.Guid == item.Id);
+                      
 
                             if (newsFromDB.Count() == 0)
                             {
@@ -145,11 +147,19 @@ namespace NewsReader
 
                                     newsDB.ID = +1;
                                     newsDB.Guid = item.Id;                                                                 // содержет GUID-идентификатор 
-                                    newsDB.SourceName = item.Id.Substring(8, 8);                                           // источник
+                                    if (newsReaded.Generator == "habr.com")
+                                    {
+                                        newsDB.SourceName = newsReaded.Generator + ": " + newsReaded.Title.Text;           // источник
+                                    }
+                                    else
+                                    {
+                                        newsDB.SourceName = newsReaded.Title.Text;
+                                    }
                                     newsDB.SourseUrl = item.Links.Select(s => s.Uri).FirstOrDefault().AbsoluteUri;         // URL адрес источника новости
                                     newsDB.Publication_Date = item.PublishDate.DateTime;                                   // дата публикации
                                     newsDB.News_title = item.Title.Text;                                                   // название новости
-                                    newsDB.News_description = item.Summary.Text;                                           // описание новости
+                                    var newsDescription = item.Summary.Text;
+                                    newsDB.News_description = Regex.Replace(newsDescription, "<[^>]+>", string.Empty);     // описание новости
 
                                     //записываем данные в БД                             
                                     news.InsertOnSubmit(newsDB);
